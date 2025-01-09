@@ -115,7 +115,10 @@ app.post('/api/compare-faces', async (req, res) => {
         }
 
         const result = await compareFaces(image1Url, image2Url);
-        res.json(result);
+        res.json({
+            ...result,
+            percentageMatch: `${Math.round(result.similarity * 100)}%`
+        });
 
     } catch (error) {
         res.status(500).json({
@@ -178,7 +181,8 @@ app.post('/api/compare-mixed', upload.single('image'), async (req, res) => {
         res.json({
             matched: similarity > 0.6,
             similarity: similarity,
-            distance: distance
+            distance: distance,
+            percentageMatch: `${Math.round(similarity * 100)}%`
         });
 
     } catch (error) {
