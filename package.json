@@ -5,7 +5,6 @@
     "@vladmandic/face-api" : "^1.7.14",
     "express": "^4.21.2",
     "multer": "^1.4.5-lts.1",
-    "cors": "^1.4.5-lts.1",
     "axios": "^1.7.7"
   }
 }
