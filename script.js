@@ -204,6 +204,18 @@ app.post('/api/compare-mixed', upload.single('image'), async (req, res) => {
     }
 });
 
+app.get('/', (req, res) => {
+    res.json({
+        name: 'Face Detection API',
+        status: 'running',
+        endpoints: {
+            compareFaces: '/api/compare-faces',
+            compareMixed: '/api/compare-mixed'
+        },
+        modelsLoaded: modelsLoaded
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
