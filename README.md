@@ -8,6 +8,13 @@ A Node.js API for face comparison using TensorFlow.js and face-api.js.
 
 ## Installation
 
+### Easy Docker version
+
+```
+docker build -t face-detection-api .
+docker run -p 3000:3000 face-detection-api
+```
+
 ### CPU Version (Tested on CPU)
 1. Run `npm install` to install the dependencies
 2. Run `npm start` to start the server
