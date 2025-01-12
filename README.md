@@ -4,7 +4,7 @@ A Node.js API for face comparison using TensorFlow.js and face-api.js.
 
 ## Prerequisites
 
-- Node.js (v14.15.4) & (22.12.0) Tested on
+- Node.js (v14.15.4) or (22.12.0) Tested on
 
 ## Installation
 
