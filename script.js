@@ -139,18 +139,28 @@ app.post('/api/compare-mixed', upload.single('image'), async (req, res) => {
                 error: 'Both image URL and uploaded file are required'
             });
         }
+        console.log('1111');
 
         // Load the URL image
         const urlImage = await downloadImage(imageUrl);
+
+        console.log('2222');
+
         
         // Load the uploaded file
         const uploadedImage = await loadImageFromFile(uploadedFile.path);
+
+        console.log('3333');
+
 
         // Get face descriptors
         const [urlDescriptor, uploadedDescriptor] = await Promise.all([
             getFaceDescriptors(urlImage),
             getFaceDescriptors(uploadedImage)
         ]);
+
+        console.log('444');
+
 
         // Check if faces were detected in both images
         if (!urlDescriptor || !uploadedDescriptor) {
