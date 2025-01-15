@@ -139,7 +139,7 @@ app.post('/api/compare-mixed', upload.single('image'), async (req, res) => {
                 error: 'Both image URL and uploaded file are required'
             });
         }
-        console.log('1111');
+        console.log('1111', imageUrl);
 
         // Load the URL image
         const urlImage = await downloadImage(imageUrl);
@@ -206,7 +206,7 @@ app.post('/api/compare-mixed', upload.single('image'), async (req, res) => {
                 }
             });
         }
-
+        console.error('Error processing face comparison:', error); // Log the error details
         res.status(500).json({
             error: 'Error processing face comparison',
             details: error.message
